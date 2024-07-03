@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+
+
+<head>
+    <title>thymeleaf demo</title>
+
+    <link rel="stylesheet" th:href="@{/css/demo.css}"> //th is thymeleaf expression what a bullshit thing to use
+</head>
+
+<body>
+    
+    <p th:text="'Time on the server is '+ ${theDate}" class="funny"/>
+
+</body>
+
+</html>
