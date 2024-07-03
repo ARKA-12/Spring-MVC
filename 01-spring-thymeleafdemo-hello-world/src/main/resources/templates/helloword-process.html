@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Output-Form</title>
+</head>
+<body>
+
+    <h1>Hello World</h1>
+    <br><br>
+
+    <!-- that's how we can read form submitted data here using "param.name". -->
+    <P>Student Name: <span th:text="${param.StudentName}"></P>
+    <p>Model Message: <span th:text="${message}" </p>
+
+</body>
+</html>
