@@ -27,6 +27,58 @@ country:
 
   <br><br>
 
+  Favorite Progarmming language: 
+
+  <!-- 
+  **** This a normal or manual way to work
+  
+  <input type="radio" th:field="*{favoriteLanguage}" th:value="GO">GO </input>
+  <input type="radio" th:field="*{favoriteLanguage}" th:value="JAVA">JAVA </input>
+  <input type="radio" th:field="*{favoriteLanguage}" th:value="Python">Python </input> -->
+
+
+  <!-- 
+  **** This is a daynamic way to work as this data coming from application.properties files
+   
+  
+  -->
+  <input  type="radio" th:field="*{favoriteLanguage}" 
+                        th:each="tempLanguages: ${languages}"
+                         th:value="${tempLanguages}" 
+                          th:text="${tempLanguages}"/>
+
+                          <!-- 
+                          
+                          th:field="*{favoriteLanguage}"  -- buidning to property on student object
+                        th:each="tempLanguages: ${languages}" --loop over the list of languages 
+                         th:value="${tempLanguages}" -- value sent during form submission
+                          th:text="${tempLanguages}"/> -- Display to user
+                          
+                          -->
+ 
+  
+  <br><br>
+
+  Your Favroite Operating System:
+
+  <!-- 
+  **** This a normal or manual way to work
+
+  <input type="checkbox" th:field="*{systemCheck}" th:value="Windows">Windows</input>
+  <input type="checkbox" th:field="*{systemCheck}" th:value="macOS">macOS</input>
+  <input type="checkbox" th:field="*{systemCheck}" th:value="Linux">Linux</input>
+  <input type="checkbox" th:field="*{systemCheck}" th:value="Android">Android</input> -->
+
+  <input type="checkbox" th:field="*{systemCheck}"
+                         th:each="tempOs : ${operatingSystem}"
+                         th:value="${tempOs}"
+                         th:text="${tempOs}" />
+
+
+
+  <br><br>
+
+
 <input type="submit" value="submit">
 
 
