@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Ragistration Form</title>
+
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <i>Fill out the Form. Astrisk(*) means required</i>
+
+    <br><br>
+    <form
+      th:action="@{/processCustomerForm}"
+      th:object="${customer}"
+      method="Post"
+    >
+      <label for="">Firstname: </label>
+      <input type="text" th:field="*{firstName}" />
+      <br /><br />
+      <label for="">LastName(*): </label>
+      <input type="text" th:field="*{lastName}" />
+
+      <!-- Adding an error message if present......-->
+
+      <span
+        th:if="${#fields.hasErrors('lastName')}"
+        th:errors="*{lastName}"
+        class="error"
+      ></span>
+
+      <input type="submit" value="submit">
+    </form>
+
+   
+  </body>
+</html>
