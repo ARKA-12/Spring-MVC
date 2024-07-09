@@ -14,7 +14,7 @@
   <body>
     <i>Fill out the Form. Astrisk(*) means required</i>
 
-    <br><br>
+    <br /><br />
     <form
       th:action="@{/processCustomerForm}"
       th:object="${customer}"
@@ -34,10 +34,32 @@
         class="error"
       ></span>
 
-      <br><br>
-      <input type="submit" value="submit">
-    </form>
+      <br /><br />
 
-   
+
+      Free Passes:
+      <input type="text" th:field="*{freePasses}" />
+      <span
+        th:if="${#fields.hasErrors('freePasses')}"
+        th:errors="*{freePasses}"
+        class="error"
+      ></span>
+
+      <br /><br />
+      <br /><br />
+
+      Postal Code:
+      <input type="text" th:field="*{postalCode}" />
+      <span
+        th:if="${#fields.hasErrors('postalCode')}"
+        th:errors="*{postalCode}"
+        class="error"
+      ></span>
+
+
+
+
+      <input type="submit" value="submit" />
+    </form>
   </body>
 </html>
