@@ -48,6 +48,10 @@ public class CustomerContoller {
 
         System.out.println("Last Name: |"+ thecustomer.getLastName()+" |");
 
+        System.out.println("Binding result: "+ theBindingResult.toString());
+
+        System.out.println("\n\n\n\n");
+
         if(theBindingResult.hasErrors()){
             return "customer-form";
         }
